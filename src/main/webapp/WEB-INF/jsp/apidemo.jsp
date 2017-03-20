@@ -32,7 +32,7 @@
       <button class="btn btn_primary" id="checkJsApi">checkJsApi</button>
       <h3 id="menu-basic">授权</h3>
       <span class="desc">网页授权</span>
-      <button class="btn btn_primary" id="OAuth">OAuth</button>
+      <button class="btn btn_primary" id="OAuth" onclick="doOAuth()">OAuth</button>
 <!--       <h3 id="menu-share">分享接口</h3> -->
 <!--       <span class="desc">获取“分享到朋友圈”按钮点击状态及自定义分享内容接口</span> -->
 <!--       <button class="btn btn_primary" id="onMenuShareTimeline">onMenuShareTimeline</button> -->
@@ -183,6 +183,15 @@
       ]
   });
 </script>
+<script>
+
+ function doOAuth(){
+	console.info("click")
+    location.href ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=${parm.appid}&redirect_uri=${parm.redirectUrl}&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
+};
+
+</script>
+
 <script type="text/javascript" src="/webjars/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/apidemo/apidemo.js"></script>
 </html>
